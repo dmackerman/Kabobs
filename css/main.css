@@ -1,0 +1,13 @@
+
+a, a:hover, a:focus {
+    color: #D33BBA;
+}
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    color: #fff;
+    background-color: #8E42CA;
+}
+
+.panel {
+    box-shadow: none;
+}
