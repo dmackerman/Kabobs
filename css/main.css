@@ -16,7 +16,7 @@ a, a:hover, a:focus {
     box-shadow: none;
 }
 
-input {
+input, input[type=radio], input[type=checkbox] {
     padding: 2px 4px;
     margin: 8px 12px;
     border: none;
