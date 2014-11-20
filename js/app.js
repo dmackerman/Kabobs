@@ -1,25 +1,15 @@
 
-(function() {
-
-    var app = angular.module('kabobs', ['ngMaterial']);
-
-    app.controller('KabobController', ['$scope', function($scope) {
-        $scope.data = {};
-        $scope.data.geoff = false;
-        $scope.data.richard = false;
+angular.module('kabobs', [])
+    .controller('KabobController', ['$scope', function($scope) {
+        $scope.master = {};
 
         $scope.update = function(kabobs) {
-            $scope.data = angular.copy(kabobs);
+            $scope.master = angular.copy(kabobs);
         };
 
-        $scope.reset = function () {
-            $scope.kabobs = angular.copy($scope.data);
+        $scope.reset = function() {
+            $scope.user = angular.copy($scope.master);
         };
 
         $scope.reset();
-
-    });
-
-
-
-})();
+    }]);

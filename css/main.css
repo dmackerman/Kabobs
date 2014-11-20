@@ -1,4 +1,8 @@
 
+body {
+    padding: 20px 0 40px;
+}
+
 a, a:hover, a:focus {
     color: #D33BBA;
 }
@@ -10,4 +14,26 @@ a, a:hover, a:focus {
 
 .panel {
     box-shadow: none;
+}
+
+input {
+    padding: 2px 4px;
+    margin: 8px 12px;
+    border: none;
+    border-bottom: 1px solid rgba(50,50,50,0.3);
+}
+input:focus {
+    outline: none;
+}
+input[type="number"] {
+    width: 60px;
+}
+input.ng-invalid.ng-dirty {
+    padding-bottom: 1px;
+    border-bottom: 2px solid rgba(234, 89, 0, 1);
+}
+
+input.ng-valid.ng-dirty {
+    padding-bottom: 1px;
+    border-bottom: 2px solid rgba(51, 203, 134, 1);
 }
