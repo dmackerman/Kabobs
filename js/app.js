@@ -1,7 +1,11 @@
 (function() {
 
     function MeatController() {
-        this.products = [{
+
+        // viewModel. bind here to avoid 'this' issues inside other function calls.
+        var vm = this;
+
+        vm.products = [{
             name: 'Beef Kobeeda',
             id: 'beefKobeeda',
             value: 'beefKobeeda'
@@ -26,13 +30,16 @@
 
     function KabobsController() {
 
-        this.update = function(kabobs) {
-            console.log(arguments);
-            this.master = angular.copy(kabobs);
+        // viewModel. bind here to avoid 'this' (and having to use .bind() to change `this`
+        // context, and issues inside other function calls.
+        var vm = this;
+
+        vm.update = function(kabobs) {
+            vm.master = angular.copy(kabobs);
         };
 
-        this.reset = function() {
-            this.kabobs = angular.copy(this.master);
+        vm.reset = function() {
+            vm.kabobs = angular.copy(vm.master);
         };
     }
 
