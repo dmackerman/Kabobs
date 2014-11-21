@@ -28,18 +28,19 @@
             value: 'lamb'
         }];
 
-        vm.update = function (kabobs) {
+        vm.update = function(kabobs) {
             console.log(arguments);
             vm.master = angular.copy(kabobs);
         };
 
-        vm.reset = function () {
+        vm.reset = function() {
             vm.kabobs = angular.copy(vm.master);
         };
 
-        angular
-            .module('kabobOrder', [])
-            .controller('KabobsController', KabobsController);
     }
+
+    angular
+        .module('kabobOrder', [])
+        .controller('KabobsController', KabobsController);
 
 })();
