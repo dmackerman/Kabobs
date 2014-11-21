@@ -1,22 +1,6 @@
 (function() {
-    angular.module('kabobOrder', [])
-        .controller('KabobController', ['$scope', function($scope) {
-            $scope.master = {};
 
-            $scope.update = function(kabobs) {
-                $scope.master = angular.copy(kabobs);
-            };
-
-            $scope.reset = function() {
-                $scope.kabobs = angular.copy($scope.master);
-            };
-
-            $scope.reset();
-
-        }])
-
-    .controller('MeatController', function() {
-
+    function MeatController() {
         this.products = [{
             name: 'Beef Kobeeda',
             id: 'beefKobeeda',
@@ -38,6 +22,23 @@
             id: 'lamb',
             value: 'lamb'
         }];
-    });
+    }
+
+    function KabobsController() {
+
+        this.update = function(kabobs) {
+            console.log(arguments);
+            this.master = angular.copy(kabobs);
+        };
+
+        this.reset = function() {
+            this.kabobs = angular.copy(this.master);
+        };
+    }
+
+    angular
+      .module('kabobOrder', [])
+      .controller('MeatController', MeatController)
+      .controller('KabobsController', KabobsController);
 
 })();
