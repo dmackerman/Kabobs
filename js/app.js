@@ -34,7 +34,7 @@
         };
 
         vm.reset = function () {
-            vm.kabobs = angular.copy(this.master);
+            vm.kabobs = angular.copy(vm.master);
         };
 
         angular
