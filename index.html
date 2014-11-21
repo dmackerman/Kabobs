@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="kabobs">
+<html ng-app="kabobOrder">
 <head lang="en">
     <meta charset="UTF-8">
     <title>Kabobs</title>
@@ -14,31 +14,33 @@
         <div ng-controller="KabobController">
             <form novalidate class="simple-form">
                 <label for="people">How many people are eating?
-                <input type="number" placeholder="0" integer min="1" name="people" id="people" required ng-model="user.people" ng-model-options="{ debounce: 250 }" />
+                    <input type="number" placeholder="0" integer min="1" name="people" id="people" required ng-model="kabobs.people" ng-model-options="{ debounce: 250 }" />
                 </label>
                 <br />
                 <label for="geoff">Is one of those people Geoff?
-                <input type="checkbox" value="geoff" integer min="1" name="geoff" id="geoff" required ng-model="user.geoff" />
+                    <input type="checkbox" value="geoff" name="geoff" id="geoff" required ng-model="kabobs.geoff" />
                 </label>
                 <br />
                 <label for="richard">Is one of those people Richard?
-                <input type="checkbox" value="richard" integer min="1" name="richard" id="richard" required ng-model="user.richard" />
+                    <input type="checkbox" value="richard" name="richard" id="richard" required ng-model="kabobs.richard" />
                 </label>
                 <br />
-
                 <h4>Which meats do you want?</h4>
-                <label for="beefKobeeda"><input type="checkbox" name="meat" ng-model="user.beefKobeeda" id="beefKobeeda" value="beefKobeeda" />Beef Kobeeda</label> <br />
-                <label for="chickenKobeeda"><input type="checkbox" name="meat" ng-model="user.chickenKobeeda" id="chickenKobeeda" value="chickenKobeeda" />Chicken Kobeeda</label><br />
-                <label for="beef"><input type="checkbox" name="meat" ng-model="user.beef" id="beef" value="beef" />Beef</label><br />
-                <label for="chicken"><input type="checkbox" name="meat" ng-model="user.chicken" id="chicken" value="chicken" />Chicken</label><br />
-                <label for="lamb"><input type="checkbox" name="meat" ng-model="user.lamb" id="lamb" value="lamb" />Lamb</label><br />
-
+                <div ng-controller="MeatController as meat">
+                    <span ng-repeat="product in meat.products">
+                       <label for="{{product.id}}">
+                           <input type="checkbox" value="{{product.value}}" id="{{product.id}}">
+                           {{product.name}}
+                       </label>
+                        <br />
+                    </span>
+                </div>
                 <br />
                 <button class="btn btn-warning" ng-click="reset()">Reset</button>
-                <button class="btn btn-success" ng-click="update(user)">Save</button>
+                <button class="btn btn-success" ng-click="update(kabobs)">Save</button>
             </form>
             <br />
-            <pre>form = {{user | json}}</pre>
+            <pre>form = {{kabobs | json}}</pre>
             <pre>master = {{master | json}}</pre>
         </div>
     </div>
