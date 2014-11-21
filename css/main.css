@@ -1,6 +1,12 @@
-
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
 body {
     padding: 20px 0 40px;
+    background: #F1F0F7;
 }
 
 a, a:hover, a:focus {
@@ -27,6 +33,7 @@ input:focus {
 }
 input[type="number"] {
     width: 60px;
+    background: transparent;
 }
 input.ng-invalid.ng-dirty {
     padding-bottom: 1px;
