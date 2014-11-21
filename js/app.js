@@ -7,25 +7,25 @@
         var vm = this;
 
         vm.products = [{
-            name: 'Beef Kobeeda',
-            id: 'beefKobeeda',
-            value: 'beefKobeeda'
+            name  : 'Beef Kobeeda',
+            id    : 'beefKobeeda',
+            value : 'beefKobeeda'
         }, {
-            name: 'Chicken Kobeeda',
-            id: 'chickenKobeeda',
-            value: 'chickenKobeeda'
+            name  : 'Chicken Kobeeda',
+            id    : 'chickenKobeeda',
+            value : 'chickenKobeeda'
         }, {
-            name: 'Beef',
-            id: 'beef',
-            value: 'beef'
+            name  : 'Beef',
+            id    : 'beef',
+            value : 'beef'
         }, {
-            name: 'Chicken',
-            id: 'chicken',
-            value: 'chicken'
+            name  : 'Chicken',
+            id    : 'chicken',
+            value : 'chicken'
         }, {
-            name: 'Lamb',
-            id: 'lamb',
-            value: 'lamb'
+            name  : 'Lamb',
+            id    : 'lamb',
+            value : 'lamb'
         }];
 
         vm.update = function(kabobs) {
