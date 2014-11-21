@@ -11,37 +11,35 @@
 <div class="row">
     <div class="col-md-6 col-md-offset-3">
         <h1>Kabobs</h1>
-        <div ng-controller="KabobsController as kabobs">
+        <div ng-controller="KabobsController as vm">
             <form novalidate class="simple-form">
                 <label for="people">How many people are eating?
-                    <input type="number" placeholder="0" integer min="1" name="people" id="people" required ng-model="kabobs.kabob.people" ng-model-options="{ debounce: 250 }" />
+                    <input type="number" placeholder="0" integer min="1" name="people" id="people" required ng-model="vm.kabob.people" ng-model-options="{ debounce: 250 }" />
                 </label>
                 <br />
                 <label for="geoff">Is one of those people Geoff?
-                    <input type="checkbox" value="geoff" name="geoff" id="geoff" required ng-model="kabobs.kabob.geoff" />
+                    <input type="checkbox" value="geoff" name="geoff" id="geoff" required ng-model="vm.kabob.geoff" />
                 </label>
                 <br />
                 <label for="richard">Is one of those people Richard?
-                    <input type="checkbox" value="richard" name="richard" id="richard" required ng-model="kabobs.kabob.richard" />
+                    <input type="checkbox" value="richard" name="richard" id="richard" required ng-model="vm.kabob.richard" />
                 </label>
                 <br />
                 <h4>Which meats do you want?</h4>
-                <div ng-controller="MeatController as meat">
-                    <span ng-repeat="product in meat.products">
-                       <label for="{{ product.id }}">
-                           <input type="checkbox" ng-model="kabobs.kabob.meats[product.id]" value="{{ product.value }}" id="{{ product.id }}" />
-                           {{ product.name }}
-                       </label>
-                        <br />
-                    </span>
-                </div>
+                <span ng-repeat="product in vm.products">
+                   <label for="{{ product.id }}">
+                       <input type="checkbox" ng-model="vm.kabob.meats[product.id]" value="{{ product.value }}" id="{{ product.id }}" />
+                       {{ product.name }}
+                   </label>
+                    <br />
+                </span>
                 <br />
-                <button class="btn btn-warning" ng-click="kabobs.reset()">Reset</button>
-                <button class="btn btn-success" ng-click="kabobs.update(kabobs.kabob)">Save</button>
+                <button class="btn btn-warning" ng-click="vm.reset()">Reset</button>
+                <button class="btn btn-success" ng-click="vm.update(vm.kabob)">Save</button>
             </form>
             <br />
-            <pre>form = {{ kabobs.kabob | json }}</pre>
-            <pre>master = {{ kabobs.master | json }}</pre>
+            <pre>form = {{ vm.kabob | json }}</pre>
+            <pre>master = {{ vm.master | json }}</pre>
         </div>
     </div>
 </div>
